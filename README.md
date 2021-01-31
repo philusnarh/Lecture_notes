@@ -1,1 +1,1 @@
-# Lecture_notes
+# Student lecture notes 
