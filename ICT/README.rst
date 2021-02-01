@@ -11,7 +11,8 @@ The ICT course is intended for students with little or no programming experience
 **Goals**
 
 - Provide an understanding of the role computation can play in solving problems.
-- Help students, including those who do not plan to major in Computer Science and Electrical Engineering, feel confident of their ability to write small programs that allow them to accomplish useful goals.
+- Help students feel confident of their ability to write small programs that allow them to accomplish useful goals.
+- Help students to have basic understanding in data science.
 - Position students so that they can compete for research projects and excel in subjects with programming components.
 
 
