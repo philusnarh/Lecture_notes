@@ -33,6 +33,17 @@ The ICT course is intended for students with little or no programming experience
   publisher={MIT Press}
 }
 
+- @book{book:{2163790},
+   title =     {Python Programming: An Introduction to Computer Science},
+   author =    {John M. Zelle},
+   publisher = {Franklin, Beedle & Associates},
+   isbn =      {1590282752, 9781590282755},
+   year =      {2016},
+   series =    {},
+   edition =   {3rd},
+   volume =    {},
+   url =       {http://gen.lib.rus.ec/book/index.php?md5=c51782a897bd9395479dc864b92054e1}}
+
 
 **Course Outline**
 
