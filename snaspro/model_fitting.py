@@ -58,8 +58,7 @@ def generate_model(spec):
 		prefix = f'm{i}_'
 		model = getattr(models, basis_func['type'])(prefix=prefix)
 		# for now VoigtModel has gamma constrained to sigma
-		if basis_func['type'] in ['GaussianModel', 
-									'LorentzianModel', 'VoigtModel']:
+		if basis_func['type'] in ['GaussianModel','LorentzianModel', 'VoigtModel']:
 
 			model.set_param_hint('sigma', min=1e-6, max=x_range)
 			model.set_param_hint('center', min=x_min, max=x_max)
