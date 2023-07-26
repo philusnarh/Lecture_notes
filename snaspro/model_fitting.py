@@ -92,7 +92,7 @@ def update_spec_from_peaks(spec, model_indicies,
 	y = spec['y']
 	x_range = np.max(x) - np.min(x)
 	peak_indicies = signal.find_peaks_cwt(y, peak_widths)
-	# print(peak_indicies)
+	print(peak_indicies)
 	np.random.shuffle(peak_indicies)
 	for peak_indicie, model_indicie in zip(peak_indicies.tolist(), model_indicies):
 		model = spec['model'][model_indicie]
