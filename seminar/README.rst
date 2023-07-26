@@ -1,21 +1,21 @@
 =======================================
-NBLE: Natural Background Level estimator
+Hands-on: gender detection using DL
 =======================================
 
 
-**NBLE** is a Python source code for estimating the natural background levels of geochemical species with multiple sources. Basically, the code performs two main tasks: 
+**petrology_util_funcs** is a Python utility script for classification using VGG16/ VGG19: 
 
-1. Produces the morphorlogical structure of the geochemical data using the Kernel Density Estimation (KDE) approach as presented below;
+1. VGG16 design:
 
-.. image:: https://raw.githubusercontent.com/lonona/NBL/master/gmm/image/kde.png
+.. image:: https://github.com/philusnarh/Lecture_notes/blob/main/seminar/image/vgg16.png
    :alt: 
    :align: center
 
-2. Estimates the NBL by using the Gaussian Mixture Model to decompose the geochemical data into components as displayed below; 
+2. You will learn how to generate stack plots for activation layers as well; 
 
-.. image:: https://raw.githubusercontent.com/lonona/NBL/master/gmm/image/gmm.png
+.. image:: https://github.com/philusnarh/Lecture_notes/blob/main/seminar/image/activation_layers.png
    :alt: 
    :align: center
 
 
-To run the <<model_util>> script you may install **Anaconda** from the `Official link <https://www.anaconda.com/products/individual>`_. Click on this `template <https://nbviewer.jupyter.org/urls/dl.dropbox.com/s/3u5igqyx602c1cd/nble.ipynb>`_ to obtain the plots above. 
+To run the <<gender_detection>> hands-on script you may install **Anaconda** from the `Official link <https://www.anaconda.com/products/individual>`_. Click on this `template <https://nbviewer.org/urls/dl.dropbox.com/s/c4nltmtn652332j/gender_detection_01.ipynb>`_ to practice. 
