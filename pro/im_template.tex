@@ -1,0 +1,888 @@
+% mnras_template.tex 
+%
+% LaTeX template for creating an MNRAS paper
+%
+% v3.0 released 14 May 2015
+% (version numbers match those of mnras.cls)
+%
+% Copyright (C) Royal Astronomical Society 2015
+% Authors:
+% Keith T. Smith (Royal Astronomical Society)
+
+% Change log
+%
+% v3.0 May 2015
+%    Renamed to match the new package name
+%    Version number matches mnras.cls
+%    A few minor tweaks to wording
+% v1.0 September 2013
+%    Beta testing only - never publicly released
+%    First version: a simple (ish) template for creating an MNRAS paper
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Basic setup. Most papers should leave these options alone.
+\documentclass[fleqn,usenatbib]{mnras}
+
+% MNRAS is set in Times font. If you don't have this installed (most LaTeX
+% installations will be fine) or prefer the old Computer Modern fonts, comment
+% out the following line
+\usepackage{newtxtext,newtxmath}
+% Depending on your LaTeX fonts installation, you might get better results with one of these:
+%\usepackage{mathptmx}
+%\usepackage{txfonts}
+
+% Use vector fonts, so it zooms properly in on-screen viewing software
+% Don't change these lines unless you know what you are doing
+\usepackage[T1]{fontenc}
+\usepackage{ae,aecompl}
+
+
+%%%%% AUTHORS - PLACE YOUR OWN PACKAGES HERE %%%%%
+
+% Only include extra packages if you really need them. Common packages are:
+\usepackage{graphicx}	% Including figure files
+\usepackage{amsmath}	% Advanced maths commands
+\usepackage{amssymb}	% Extra maths symbols
+\usepackage{amsfonts}
+\usepackage{color,soul}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%\usepackage{multicol}
+\usepackage{csquotes}
+\usepackage{enumitem}
+\usepackage{mathtools}  % for subequations
+\usepackage{subcaption}
+\usepackage{float}
+%\usepackage[section]{placeins}
+%\usepackage{dblfloatfix} 
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{bm}
+\usepackage{todonotes}	% todo notes
+\newcommand{\ra}[1]{\renewcommand{\arraystretch}{#1}}
+\newcommand{\OMS}[1]{\hl{{\bf OMS:} #1}}
+%\setupwhitespace[medium]
+
+% Green Box Comment Shortcut Command
+\usepackage{todonotes}	% todo notes
+\newcommand{\filnote}[1]{\todo[inline, color=orange]{#1}}
+
+%\usepackage{multicol}
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%% AUTHORS - PLACE YOUR OWN COMMANDS HERE %%%%%
+
+% Please \hypersetup{urlcolor=blue, colorlinks=true}keep new commands to a minimum, and use \newcommand not \def to avoid
+% overwriting existing commands. Example:
+%\newcommand{\pcm}{\,cm$^{-2}$}	% per cm-squared
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%% TITLE PAGE %%%%%%%%%%%%%%%%%%%
+
+% Title of the paper, and the short title which is used in the headers.
+% Keep the title short and informative.
+\title[Intensity Mapping]{Exploring Intensity Mapping Techniques Via Simulations}
+
+% The list of authors, and the short list which is used in the headers.
+% If you need two or more lines of authors, add an extra line using \newauthor
+\author[T. Ansah-Narh et al.]{
+T. Ansah-Narh,$^{1}$\thanks{E-mail: philusnarh@gmail.com (TAN)}
+F. B. Abdalla,$^{1,2}$
+and O. M. Smirnov$^{1,3}$
+%O. M Smirnov$^{2,3}$
+%and Fourth Author$^{3}$
+\\
+% List of institutions
+$^{1}$Department of Physics and Electronics, Rhodes University, P. O. Box 94, Grahamstown, 6140, South Africa\\
+$^{2}$Department of Physics and Astronomy, University College London, London WC1E 6BT, UK\\
+$^{3}$SKA South Africa, 3rd Floor, The Park, Park Road, Pinelands, 7405, South Africa
+}
+
+% These dates will be filled out by the publisher
+\date{Accepted XXX. Received YYY; in original form ZZZ}
+
+% Enter the current year, for the copyright statements etc.
+\pubyear{2017}
+
+% Don't change these lines
+
+\begin{document}
+\label{firstpage}
+\pagerange{\pageref{firstpage}--\pageref{lastpage}}
+\maketitle
+
+% Abstract of the paper
+\begin{abstract}
+%
+%The 21-cm emissions are treated as a diffuse source without attempting to detect individual
+%objects
+Intensity mapping is a new observational technique that treats 21-cm emissions as a diffuse source without attempting to detect individual objects. The technique normally takes low frequency radio observations and therefore, allows smaller and cheaper radio antennas without long baselines such as KAT-7 to be used in such experiments, hence increasing the science output in tracing the  Cosmic structure. However, the technique is limited to Direction-Dependent (DD) effects with the most challenge one being the primary beam response per antenna, as it modulates the intensity as a function of the sky position. This is exactly what is being measured by intensity mapping experiments in the first place. In the case of KAT-7 and upcoming aperture arrays, this will be dominated by mis-pointings and polarisation leakages. These ultimately, contaminate the low frequency radio observation, hence, cause a portion of Stokes $I$ to find its way into linear polarisation. This has to be overcome in order to make such an experiment work to the best of its capabilities. The key focus of this paper is to study the effect of primary beam response in intensity mapping experiments and to achieve this, we modelled the KAT-7 dish as a collection of dipoles and used that to produce fully polarised notional beams. We corrupted these notional beams by introducing gain and phase errors and dipole orientation errors. We then observed what came out of these simulations in terms of foregrounds that had leaked from intensity to polarisation. Our simulation showed that, the maximum amount of foregrounds that leaked from Stokes $I \rightarrow Q$ is $\approx 0.7402 \%$ and that of  $I \rightarrow U$ is $\approx 0.7587 \%$. We compared these outputs by performing similar simulations with holography measured beams of VLA and obtained $\approx 0.7393 \%$ and $ 0.7339 \%$ for $I \rightarrow Q$ and $I \rightarrow U$ respectively. Hence, the maximum expected errors made in the power spectrum estimation if we assumed notional beams, whilst the foregrounds were actually convolved with  holography beams were estimated at $ 0.0488 \%$ (for $I$),  $0.1628 \%$  (for $Q$) and for $U$ we had $0.0642 \%$. Hence, with the fully polarised beams we can always predict the signal that had leaked from intensity into polarisation leakages.
+\filnote{We need to look at the abstract in the end...}
+
+\end{abstract}
+
+% Select between one and six entries from the list of approved keywords.
+% Don't make up new ones.
+\begin{keywords}
+techniques:  interferometric -- methods: statistical -- cosmology: observation -- cosmology: theory -- diffuse radiation
+\end{keywords}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%% BODY OF PAPER %%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%% BODY OF PAPER %%%%%%%%%%%%%%%%%%
+
+
+\section{Introduction} \label{sec:intro}
+%%
+
+Over the last two decades, the spectroscopic data released from 2-degree-Field (2dF\footnote{{\tt http://www.2dfgrs.net/}}) Galaxy Redshift Survey and Sloan Digital Sky Survey (SDSS\footnote{{\tt http://www.sdss3.org/}}) were used to obtain three-dimensional maps of large-scale structure of the universe. These optical galaxy redshift surveys were done by collecting data for each individual galaxy and computing the power spectrum for this sample \citep{1995ApJ...446..457S,1996ApJ...461...38S,2009astro2010S.234P}. 
+
+Meanwhile, recent work in radio astronomy \citep{2015aska.confE..35W,2014MNRAS.441.3271W,2008Tzu,2008PhRvL.100p1301L,2015arXiv150103989S} on \emph{Intensity Mapping} (IM), suggests that it is possible to measure the same power spectrum by taking low resolution radio images of the sky and constructing statistical maps of the large-scale neutral hydrogen (HI) distribution without actually localizing individual objects.
+
+
+This observational technique has the advantage of measuring the joint emission from neutral hydrogen originating in a region,
+including radiation from faint sources and from the diffuse inter-galactic medium (IGM), which at high redshifts could not be detected in other ways but whose contribution to the total signal is important. These intensity maps have the advantage of containing spatial information that can be used to further understand the processes of structure formation as a cosmological probe, since the fluctuations in the intensity of emission or absorption lines are correlated with underlying dark matter density fluctuations \citep[p. 366]{2009bkk1}. Also, with observational data from different frequencies, 
+we will be able to cross-correlate the lines which can be used to remove foreground from 21 cm observations. This is possible since diverse emission lines will be observed at different frequencies and so will be contaminated mainly by uncorrelated line foregrounds. Since low resolution images of the sky are used in this 
+experiment, we can use smaller and cheaper telescopes without long baselines such as KAT-7, hence increasing the science output and techniques in cosmology and 
+radio interferometry. Furthermore, present IM instruments such as the Green Bank Telescope (GBT) \citep{2010PhRvD..81j3527M}, Baryon acoustic oscillations In Neutral
+Gas Observations (BINGO) \citep{2012arXiv1209.1041B}, Canadian Hydrogen Intensity Mapping Experiment (CHIME) \citep{2014SPIE.9145E..22B,2014SPIE.9145E..4VN} and the 
+capabilities of the next generation of telescopes such as dense aperture arrays for the Square Kilometre Array (SKA) \citep{Faulkner2011,deVaate2012} and the under
+development Hydrogen Intensity and Real-time Analysis eXperiment (HIRAX) \citep{2016arXiv160702059N} make it only more promising. IM experiments can be carried out at
+different redshifts either in auto-correlation mode, that is, single dish observations like BINGO  \citep{2012arXiv1209.1041B} or interferometric mode 
+like CHIME \citep{2014SPIE.9145E..4VN}.
+ 
+Crucially, observations using the IM technique require the accurate subtraction of the foreground continuum signal, since the HI signal is several orders of magnitude weaker.
+Existing foreground subtraction techniques rely on the smoothness of this signal as a function of frequency. In the absence of instrumental 
+corruptions, this assumption is perfectly valid. However, real-life observations are affected by direction-dependent (DD) effects, that is, variations in gain
+amplitude and phase over the field of view (FoV), as well as the so-called polarisation leakage. These are primarily caused by the ionosphere (in the case of 
+phase effects), and by variations in the primary beam (PB) response of the antennas. Both sources of error are time-dependent: the ionosphere over the array 
+evolves as a function of time, while the beam (of an alt-azimuthally mounted telescope) rotates with respect to the sky, and is also subject to pointing offsets and 
+deformations of the dish surface induced by wind \& gravitational load on the dishes, differential heating, etc. Problems posed by the ionosphere are especially severe 
+at lower frequencies, and with large interferometric arrays such as LOFAR \citep{2013A&A...556A...2V,2010ISPM...27...30W}. In this work we concentrate rather on the effects of the primary 
+beam, and in particular, direction-dependent polarisation leakage. 
+
+Polarisation leakage refers to a fraction of the signal from one orthogonal polarisation mode being registered by the receptor measuring the other mode. 
+In terms of Stokes parameters, it produces unwanted transfer of signal between the Stokes $I$ and $QUV$ measurements. It is a particular problem for IM observations,
+because polarized foreground signals are generally not smooth as a function of frequency (due to Faraday rotation of the $QU$ vector). Leakage therefore results in a
+non-smooth foreground component being introduced into Stokes $I$, one which is not amenable to traditional foreground subtraction techniques.Correcting for leakage is a
+challenge, since it varies both as a function of time and frequency, hence, it is expected to limit observations  with  existing  as  well  as  upcoming radio telescopes
+presently under construction \citep{2008A&A...487..419B}.  Existing approaches to DD effects such as DD solutions \citep{2011A&A...527A.106S} are not directly applicable,
+since individual galaxies are not mapped out by this experiment. New approaches to mapping out DD effects in a statistical sense need to be developed. 
+
+In this work, we seek to quantify two effects: (a) the contribution of polarization leakage to the measured HI power spectrum, given some more or less realistic primary beams, 
+and (b) the uncertainty on the estimate of (a) introduced by unmodelled differences in the primary beam.
+
+%In the case of KAT-7 and upcoming aperture arrays, these will be dominated by pointing errors and polarisation leakages. 
+
+%%
+
+The paper is organized as follows: Section~\ref{sec:beam-model} discusses the beam modeling techniques used in this work. Here, we present a simulation of KAT-7 beam patterns using OSKAR $2.6.1$ and validate these modeled beams with holography measured beams ofthe JVLA. Section~\ref{sec:simulation}  discusses briefly about the components of the Galactic foregrounds and its contribution to polarisation measurements. This section also continues to present a simulation on the IM experiment using convolution techniques and then presents on angular power spectrum estimation in spherical harmonic domain. Results and analysis are outlined in Section~\ref{sec:results}. Finally, a summary of this paper is presented in Section~\ref{sec:conclusions}.\\
+\filnote{This section needs to be checked for English... I will reread it will reread it when this is done...}
+
+
+\section{Primary Beam Modelling}    \label{sec:beam-model}
+%%
+Various techniques and software packages for modelling the primary beam response of an antenna have been developed over the years. These range from simple
+geometrical raytracing implemented in the {\tt cassbeam}\footnote{{\tt https://github.com/ratt-ru/cassbeam}} Cassegrain antenna simulator (W. Brisken), to 
+sophisticated EM modelling techniques incorporated in the commercially available GRASP\footnote{{\tt 
+http://www.ticra.com/products/software/grasp}} and FEKO\footnote{{\tt https://www.feko.info/product-detail/overview-of-feko}} software suites. The latter two options produce the most accurate results, but are quite expensive in computational and commercial terms.
+
+Since the purpose of this work is to study the observational effects of primary beam distortion, we need to develop a recipe for computing both an ideal beam
+pattern, and a set of many perturbed patterns representing deformations of the antenna. This is technically possible to do with GRASP or FEKO, but impractically 
+expensive for our purposes (primarily because of the many perturbed patterns required). On the other hand, we don't actually need a physically \emph{precise} 
+model of the KAT-7 primary beam, since future IM observations will not be carried out by KAT-7. KAT-7 is a notional example that we adopt for the purposes of our study. What we rather need is a relatively cheap way to compute ideal and perturbed beams, with perturbations that are representative of those seen in actual telescopes.
+
+The OSKAR package\footnote{{\tt http://www.oerc.ox.ac.uk/~ska/oskar2/}} \citep{2017MNRAS.465.3680M,2014arXiv1408.3998S,2009wska.confE..31D}  was developed to simulate primary beams of (and observations with) aperture arrays. It can compute the primary beam response of aperture arrays stations that are specified as a collection of dipoles. OSKAR is open-source, and takes advantage of GPU acceleration to compute such patterns relatively quickly. Below, we show that OSKAR can be used to compute ``dish-like'' primary beams, by generating a geometric dipole distribution that mimics the aperture illumination function (AIF) of a dish. We stress that the resulting beam pattern is completely notional, and cannot be treated as a physically accurate model of the KAT-7 beam. It is, however, broadly representative of the dish beam. Furthermore, perturbations
+w.r.t. this ideal notional beam can be readily generated by perturbing the dipole distribution. The OSKAR approach gives us a practical way of generating such ideal and perturbed beams. As pointed out above, this is sufficient for the purposes of our work. Later in this section, we compare the primary beam perturbations produced by our approach with those seen in holographic measurements of VLA antennas, and show that the simulated perturbations are also broadly representative.
+
+
+
+%======================================================================
+\subsection{OSKAR Beam Model}		\label{sec:oskar-bm}
+%++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+%%
+In order to generate a ``dish-like'' primary beam model using OSKAR, we aim to mimic the AIF of a KAT-7-like dish by a 2D distribution of dipole positions. There are two important features of the AIF that we need to model: a tapering off towards the edge of the dish (due to the illumination pattern of the feed), and aperture blockage by the centrally-mounted feed and its four supporting struts.  
+
+To mimic illumination tapering, we generate a random distribution of 2D positions with a density that tapers off towards the edges of the dish. We do this by computing a set of positions as $x_d = R\cos(\psi)$ and $y_d = R\sin(\psi)$, where $\psi$ is drawn from a uniform random distribution over $[0, 2\pi)$, and $R$ is drawn from a 
+one-dimensional radial probability distribution $f(R)$ with suitable properties. For the latter, we adopt a Generalized Normal (GN) distribution 
+\citep{techreport-minimal,techreport-minimal2}:
+
+\begin{equation}   \label{eq:q1}
+  f(x) = \frac{\sqrt{s}}{2\sigma\Gamma(\frac{1}{s})}\exp{\left(-\left|\frac{x}{\sigma\sqrt{2}}\right|^s\right)}    
+ \end{equation}
+
+\noindent where $\sigma$ is the standard deviation, $s$ is the peak factor, and $\Gamma$ is the standard Gamma function 
+defined as $\Gamma(a) = \int_{0}^{\infty}\, y^{a-1}\, \mathrm{e}^{-y}\, dy$. The corresponding cumulative distribution function (CDF) is given by
+
+\begin{eqnarray}   \label{eq:q2} 
+ F(x) = \left\{\begin{array}{rcl}
+                   \frac{\Gamma\left( \frac{1}{s},\, \{\frac{x}{\sigma \sqrt{2}}\}^s\right)}{2\Gamma(\frac{1}{s})}, & \, \mbox{if} & x \leq 0 \\
+                   \\
+                  1 -  \frac{\Gamma \left( \frac{1}{s}, \, \{\frac{x}{\sigma\sqrt{2}}\}^s\right)}{2\Gamma(\frac{1}{s})}, & \, \mbox{if} & x > 0
+                   \end{array}\right.                   
+\end{eqnarray}
+
+We the draw a random number $u$ from a uniform distribution over $[0,1)$, and compute the 
+sample $R$ as $R=|F^{-1}(u)|$. This results in a the ``flat-top Gaussian'' radial density distribution shown in Fig.~\ref{fig:fg1}, left. The parameters 
+of the GN distribution, $\sigma$ and $s$ control the width of the distribution and the aggressiveness of the taper. We have adopted values of 
+$\sigma = 0.82$ and  $s = 12.0$ to produce the radial distribution in the figure.
+
+To mimic aperture blockage, we simply apply a mask to the 2D positions. This ultimately results in the dipole distribution shown in Fig.~\ref{fig:fg1}, right.
+
+
+This dipole distribution is then fed into OSKAR as the ``station layout''. For a given set of observational parameters (in particular, pointing at zenith), 
+OSKAR then computes the station primary beam responce. The resulting \emph{Jones matrix} elements are shown in Fig.~\ref{fig:fg2}. Note how the beam pattern 
+is broadly similar to that expected from a prime-focus dish. In particular, the first sidelobe shows the four-fold symmetry caused by the strut blockage.
+
+
+
+\begin{figure*}
+ \begin{minipage}[!hb]{\linewidth}
+  \centering
+     \begin{subfigure}[b]{0.48\textwidth}
+                \includegraphics[width=\textwidth]{sec2stationLayout/radial-plot}
+                \caption{}
+                \label{fig:fg2=1a}
+        \end{subfigure}       
+        \begin{subfigure}[b]{0.48\textwidth}
+                \includegraphics[width=\textwidth]{sec2stationLayout/dish-plot}
+                \caption{}
+               \label{fig:fg1b}
+        \end{subfigure}
+         \end{minipage}
+        \caption{(a) The ``flat-top Gaussian'' radial distribution of dipole positions, mimicing a realistic aperture illumination, and (b) the resulting
+        2D dipole distribution with a mask applied to mimic aperture blockage.}
+    \label{fig:fg1}
+  \end{figure*}
+ 
+ 
+%%
+
+\begin{figure*}
+ \begin{minipage}[!hb]{\linewidth}
+  \centering
+     \begin{subfigure}[b]{0.48\textwidth}
+                \includegraphics[width=\textwidth]{sec2jones/osk_jonesreal}
+                \caption{}
+                \label{fig:fg2a}
+        \end{subfigure}       
+        \begin{subfigure}[b]{0.48\textwidth}
+                \includegraphics[width=\textwidth]{sec2jones/osk_jonesimag}
+                \caption{}
+               \label{fig:fg2b}
+        \end{subfigure}
+         \end{minipage}
+        \caption{Jones matrix representation of the KAT-7-like beams produced by OSKAR, shown at $1$ GHz. (a) real part, (b) imaginary part.} 
+       
+      \label{fig:fg2}
+  \end{figure*}
+ 
+ %%
+
+\filnote{we need more information about this figure (Fig2 on the caption...), please add to the caption, describe the level of RMs in the plots, the plot needs a better color scale with better label? describe what the imaginary part means. Give more information on the caption.}
+
+%
+% +++++++++++++++++++++++++++++++++++++++++++
+\subsubsection{Jones and Mueller matrices}  		\label{sec:mueller}
+% ++++++++++++++++++++++++++++++++++++++++++++
+%%
+The Jones \citep{1948JOSA...38..671J, 1942JOSA...32..486J} formalism, originally formulated do descibe optical polarization, was adapted to radio interferometry
+by  \cite{1996A&AS..117..137H} and extended to direction-dependent effects by \cite{2011A&A...527A.106S}. Here we use the derivations of the latter two works.
+
+An elctromagnetic plane wave propaging along axis $z$ can be described, at any point in space and time, by two complex amplitudes, $e_x$ and $e_y$. Conventionally,
+we arrange these into a column vector, $\bmath{e} = [e_x,e_y]^T$. A single-dish observation aims to measure the pairwise coherencies of these amplitudes:
+
+\begin{equation}  \label{eq:pairwise}
+\bmath{x} = \left [ \begin{array}{c} \langle e_x e_x^* \rangle \\ \langle e_x e_y^* \rangle \\ \langle e_y e_x^* \rangle \\ \langle e_y e_y^* \rangle \end{array} \right ] = 
+\langle \bmath{e} \otimes \bmath{e}^* \rangle,
+\end{equation} 
+
+\noindent where $\langle\cdot\rangle$ represents the average over a time/frequency interval, and $\otimes$ is the outer (or Kronecker) product operator. From these
+measured coherencies, the Stokes parameters $IQUV$ (written as a column vector $\bmath{s}$) may be derived, by definition, as \citep{1980poet.book.....B}:
+
+\begin{equation}  \label{eq:stokes}
+\bmath{s} = \left [ \begin{array}{c} I \\ Q\\ U \\ V \end{array} \right ] = 
+\left [ \begin{array}{c} \langle e_x e_x^* \rangle + \langle e_y e_y^* \rangle \\ \langle e_x e_x^* \rangle - \langle e_y e_y^* \rangle \\ 
+\langle e_x e_y^* \rangle + \langle e_y e_x^* \rangle \\ -\imath (\langle e_x e_y^* \rangle - \langle e_y e_x^* \rangle ) \end{array} \right ]
+\end{equation} 
+
+We can rewrite this in terms of a $4\times4$ conversion matrix $\bmath{S}^{-1}$ as\footnote{This follows \cite{2011A&A...527A.106S} in definining $\bmath{S}$ as
+the conversion matrix between Stokes vectors and coherency vectors, $\bmath{v}=\bmath{Ss}$. Conversely, $\bmath{S}^{-1}$ operates in the opposite direction. Note
+that \cite{1996A&AS..117..137H} use $\bmath{T}$ to refer to $\bmath{S}^{-1}$.}:
+
+\begin{equation}  \label{eq:mconversion}
+\bmath{s} = \left[ \begin{array}{cccc}
+                         1 & 0 & 0 & 1 \\
+                         1 & 0 & 0 & -1 \\
+                         0 & 1 & 1 & 0 \\
+                         0 & -\imath & \imath & 0
+                         \end{array} \right] \bmath{x} = \bmath{S}^{-1} \bmath{x}.
+\end{equation}
+
+What the instrument actually measures is a set of pairwise correlations between two voltages induced by the EM field on two orthogonal mode 
+feeds, $v_a$ and $v_b$. The Jones formalism assumes that these are linearly related to the EM field (i.e. that all signal propagation effects are
+linear). This can be written as $\bmath{v}=\bmath{J} \bmath{e}$, where $\bmath{v}$ is a column vector of the two voltages, and the $2\times 2$ \emph{Jones
+matrix} $\bmath{J}$ describes signal propagation. The \emph{measured} coherency $\bmath{x}'$ can then be written as
+
+\begin{equation} 
+\bmath{x}' = \langle \bmath{v} \otimes \bmath{v}^* \rangle = (\bmath{J} \otimes \bmath{J}^* ) \langle \bmath{e} \otimes \bmath{e}^* \rangle = 
+(\bmath{J} \otimes \bmath{J}^* ) \bmath{x},
+\end{equation}
+
+\noindent and the measured Stokes parameter vector $\bmath{s}'$ relates to the original Stokes vector via the so-called \emph{Mueller matrix} $\bmath{M}$:
+
+\begin{equation}  
+\bmath{s}' = \bmath{M} \bmath{s} = \bmath{S}^{-1} (\bmath{J} \otimes \bmath{J}^* ) \bmath{S} \bmath{s}
+\end{equation}
+
+For the purposes of this work, we ignore all propagation effects except the primary beam. In the context of this paper, the Mueller matrix refers to the Mueller matrix of the primary beam. This matrix is direction-dependent (i.e. each direction of arrival will have its own matrix associated withit). The total Stokes flux measured by a single dish observation is then an integration over the field-of-view:
+
+\begin{equation}  
+\bmath{s}'_\mathrm{tot} = \iint\limits_{lm} \bmath{M}(l,m) \bmath{s}(l,m) \mathrm{d}l \mathrm{d}m,
+\end{equation}
+
+\noindent where the integration is, in principle, over the entire celestial sphere, but in practice, since the Mueller matrix becomes negligibly small outside of a certain FoV, can be replaced by a 2D integral over the tangent plane $lm$. 
+
+The Mueller matrix $\bmath{M}(l,m)$ corresponding to our KAT-7-like dish (Fig.~\ref{fig:truosk}a) can be derived from the Jones matrix $\bmath{J}(l,m)$ of 
+Fig.~\ref{fig:fg2}. Note the physical meaning of the matrix elements. The on-diagonal terms of the Jones matrix describe the sensitivity 
+of each feed, as a function of direction, to its matched EM field component. The off-diagonal terms describe leakage, i.e. the sensitivity of the 
+feed to the nominally orthogonal EM field component. This leakage is due to mechanical and electronic imperfections in the antennas and feeds. The diagonal 
+terms of the Mueller matrix describe the sensitivity of the measured Stokes $IQUV$ components to their true counterparts, as a function of direction. The off-diagonal terms describe suprious leakage between the measured Stokes components. We can schematically write this as
+
+$$ \bmath{M}  =       
+\left[ \begin{array}{cccc}
+                        I \rightarrow I' & Q \rightarrow I' & U \rightarrow  I' & V \rightarrow  I' \\
+                        I \rightarrow Q' & Q \rightarrow Q' & U \rightarrow  Q' & V \rightarrow  Q'\\
+                        I \rightarrow U' & Q \rightarrow U' & U \rightarrow  U' & V \rightarrow  U'\\
+                        I \rightarrow V' & Q \rightarrow V' & U \rightarrow  V' & V \rightarrow  V' 
+\end{array} \right]                    
+$$\\
+%%
+
+
+%%
+\begin{figure*}
+  \centering
+  \begin{minipage}[H]{\linewidth}
+     \begin{subfigure}[b]{0.495\textwidth}
+      \includegraphics[width=\textwidth]{sec2oskbms/osk_trumueller}
+                \caption{}
+                \label{fig:truosk1}
+        \end{subfigure}       
+        \begin{subfigure}[b]{0.485\textwidth}
+ \includegraphics[width=\textwidth]{sec2oskbms/osk_tru-gpmueller}
+                \caption{}
+               \label{fig:truosk2}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.495\textwidth}
+      \includegraphics[width=\textwidth]{sec2oskbms/osk_tru-xymueller}
+                \caption{}
+                \label{fig:truosk3}
+        \end{subfigure}       
+        \begin{subfigure}[b]{0.485\textwidth}
+         \includegraphics[width=\textwidth]{sec2realbms/vla-diffmueller}
+                \caption{}
+               \label{fig:truosk4}
+        \end{subfigure}
+         \end{minipage}
+    \caption{\textit{Mueller matrix representations of full polarisation beams produced at $1$ GHz} 
+    (a) \textit{$4 \times 4$ images of KAT-7 uncorrupted OSKAR beams.} 
+    (b) \textit{Difference between the uncorrupted OSKAR beams in Fig.~\ref{fig:truosk1} and the gain and phase error beams in appendix~\ref{fig:A1a} }
+     (c) \textit{Difference between uncorrupted OSKAR beams in Fig.~\ref{fig:truosk1} and the dipole orientation error beams in  appendix~\ref{fig:A1b}.}
+     (d) \textit{Difference between VLA holography measured beams in   appendices~\ref{fig:A2a} and~\ref{fig:A2b}.}
+      }
+	    \label{fig:truosk}
+  \end{figure*}  
+%%
+
+Fig.~\ref{fig:truosk1} displays the true modelled beams of KAT-7 produced from OSKAR in Mueller matrix form. For example, the elements $I \rightarrow Q, U, V$ in the $4 \times 4$ images describe how much the intensity of Stokes $I$ leaks into polarisation $Q, U, V$ and $Q \leftrightarrow U, \, Q \leftrightarrow  V, \, U \leftrightarrow  V$ are the cross polarisation terms. Also, we observed that the signals measured in the $V$ terms, that is, $V \leftrightarrow I, Q, U$ are relatively less sensitive compared to the other polarisation terms. This is beacause of $V$ being circularly polarised and measuring linearly polarised signals. These modelled beams were distorted by considering two main kinds of errors. The first was to introduce per dipole element, systematic and time-variable gain and phase errors as shown in appendix~\ref{fig:A1a} such that the beam-forming weight $B^{w}$, for a particular beam direction $(\theta_{bm}, \phi_{bm})$, with dipole position $(x, y, z)$ and time $t$ becomes;
+
+% EQ11
+\begin{equation} B^{w}(u) =  B_{geo}^{w}(u)(G_{0} + G_{error})\exp(j\left[\phi_{0} + \phi_{error}\right]) \label{eq:q11} \end{equation} 
+
+\noindent
+where $u = (\theta_{bm}, \phi_{bm}, x, y, z, t)$, $G_{error}$ and $\phi_{error}$ are pseudo-random values at each time-step $t$ using a Gaussian distribution with standard deviations $G_{std}$ and $\phi_{std}$ respectively. The complex multiplicative factor applied to each dipole element is denoted by the parameters Gain$(G_{0}, G_{std})$ and phase$(\phi_{0}, \phi_{std})$ respectively. This complex factor joins with the geometric beam-forming weight $B_{geo}^{w}$ to produce the array factor to evaluate the station beam at each source position. We introduced $5^\circ$ phase error and $10 \%$ gain error to distort the beams. Thus, randomly distributed deviations of the reflector from the prescribed or paraboloidal shape can cause randomly distributed phase errors over the aperture. The second error introduced was to uniformly change the orientation of the dipoles to create systematic error feed angle displacement as presented in  appendix~\ref{fig:A1b}. We distorted the $x$ and $y$ - orientation of the dipoles by introducing $\simeq 0^\circ$ and $\simeq 1^\circ$ respectively. Figs.~\ref{fig:truosk2} and~\ref{fig:truosk3} show the beam errors produced by computing the differences between the true modelled beams in Fig.~\ref{fig:truosk1} and the two distorted beams in appendices~\ref{fig:A1a} and~\ref{fig:A1b} respectively. The diagonal components of these beam errors represent the residual leakages and the off-diagonals show the residual systematic leakages. The maximum residual leakages produced in Figs.~\ref{fig:truosk2} and~\ref{fig:truosk3} are $\simeq 20 \%$ and $30 \%$ respectively. \\
+%%
+
+%%
+\noindent
+These modelled beams were then compared with ``ideal'' measured beams to specifically measure the amount of errors introduced in the simulation. In this paper, we employed the holography measured beams of VLA for two stations. The measurement technique employed in producing the beams in appendices~\ref{fig:A2a} and~\ref{fig:A2b} is based on the EVLA Memo discussed by \citet{2015Rick}. It consists of the utilization of the Fourier transform relation between the complex far-field (i.e. amplitude and phase) radiation pattern of an antenna $\chi(u, v)$ and the complex aperture distribution $\zeta(l, m)$:
+%%
+
+\begin{equation} 
+\begin{aligned}                 
+\chi(u, v) = \iint \limits_{-\infty}^{+\infty} \, \zeta(l, m)\exp\{i2\pi(lu + mv)\} dldm 
+\end{aligned}
+\label{eq:q12}
+\end{equation}
+%%
+
+\noindent
+where, $u = x/\lambda$ and $v = x/\lambda$ denote the rectilinear coordinates in wavelength, in the aperture plane. The coordinates $(l,m)$ are the direction cosine with respect to the aperture plane. The corresponding beam errors are presented in Fig.~\ref{fig:truosk4} with a maximum residual leakage of $\simeq 10 \%$. \\
+%%
+
+\noindent
+In this paper, the full polarisation beams were presented in Mueller matrix forms to enable us measure the foregrounds of the sky in Stokes parameters. We now present in section~\ref{sec:simulation} how we used both the modelled beams from OSKAR and the holography measured beams to simulate the full-sky polarisation maps.
+%%
+
+ \section{Simulation}    \label{sec:simulation}
+%%  
+The synchrotron emission from the Galaxy dominates at low microwave frequencies $(\lesssim 30 GHz)$, whilst that of thermal dust emission is at higher frequencies $(\lesssim 70 GHz)$. Between these two components in frequency, lies the thermal   free-free and non-thermal dust emissions,
+ which are formed as a result of spinning dust grains \citep{1996ApJ...464L...1B}. Detailed discussions on the components of the Galactic foregrounds, paying particular attention to their contributions to the polarization measurements can be obtained from  \citep{2014MNRAS.441.3271W,2010MNRAS.409.1647J,2015arXiv150103989S,2015MNRAS.447..400A,kiyotomo2014}. \\
+ %%
+
+
+ \noindent
+ In this paper, the scheme used to simulate the full-sky polarisation maps in Fig.~\ref{fig:fg8} is fully described in Appendix D of  \citep{2015PhRvD..91h3514S}, where they basically produced a large scale base map by extrapolating the Haslam map \citep{2008PhRvL.100p1301L}  with a  spectral index map from \citep{2008A&A...490.1093M} and then randomly generate maps that adds in fluctuations in frequency and on small angular scales. The smoothed synchrotron maps in Fig.~\ref{fig:fg8} are represented by a sample of  Hierarchical Equal Area isoLatitude Pixelation (HEALPix) of the sphere at a resolution of $N_{side} = 512$.  Other techniques for simulating full-sky radio emission are presented by \citep{2002ApJ...579..607T,2014ApJ...794..171T,2011MNRAS.418..516G,2008MNRAS.389.1319J,2008MNRAS.388..247D}.
+ % %
+ 
+%	++++++++++++++++++++++++++++++++++++++++++++
+%	Foreground maps
+%
+
+\begin{figure*}
+\begin{minipage}[H]{\linewidth}
+      \centering      
+      \includegraphics[width=6.8in]{sec3gp_conv/xy_fchan_4}
+    \end{minipage}
+     \caption{\textit{$1000$ MHz full-sky synchrotron maps simulated by using \textit{m}-mode formalism. These synchrotron maps characterize the full-sky polarisation maps for our low resolution simulated observations and are presented here in the mollweide projection form defined by equatorial coordinates in terms of Stokes parameters I, Q, U and V.}}
+	    \label{fig:fg8}    
+    \end{figure*}
+    %%
+ \noindent
+In this paper, we ignored the Stokes V part in Fig.~\ref{fig:fg8} and all other $V$ terms in the full polarisation beams discussed in Section~\ref{sec:beam-model}, since the synchrotron emissions are considered intrinsically linearly polarised.
+%%
+
+
+%
+
+\subsection{Full-sky Convolution}    \label{sec:convolution}
+%  
+to perform an IM experiment the radio telescope(s) is pointed at different patches of the sky so that we can measure the overall intensity emerging from patches from the autocorrelation of the radio signal, as a function of frequency. In order to mimic this technique in our IM simulation, we use a discrete convolution in equation~\eqref{eq:q13} to measure the intensities of the full sky synchrotron maps in Fig.~\ref{fig:fg8}.\\ 
+ %%
+ 
+\noindent Consider  $(\theta, \phi)$ to be the celestial coordinates of the foregrounds of the sky such that, $B_{fully}$ are the fully polarised beams  and $f_{sky}$ are the foregrounds of the sky. We can model the convolved foregrounds to equal: 
+ 
+\filnote{we should change the subscript fully this is confusing, fully what? please change throughout and propose a better notation.}
+ 
+%% EQ7
+\begin{equation}	\label{eq:q13}  
+\begin{aligned}  
+  F^{conv}(\theta, \phi) & =\,  B_{fully}(\theta, \phi) \, \otimes f_{sky}(\theta, \phi) \\
+  & = \sum_{ (\theta', \phi') = \,\lfloor \, (\theta, \phi) \, \rceil} \!\!\!  
+  B_{fully}(\theta' - \theta, \phi' - \phi).f_{sky}(\theta', \phi')
+\end{aligned} 
+  \end{equation}
+ % 
+ 
+\noindent where,  $ (\theta', \phi') \leq npix$ and the symbol $\lfloor \, \rceil$ denotes the nearest pixels. The measured foreground pixel values $ F^{conv}(\theta, \phi)$ of the discrete function $ F^{conv}$ for any particular $ (\theta, \phi)$ follows by multiplying each foreground pixel value $f_{sky}(\theta, \phi)$ of the discrete function $f_{sky}$ with a beam  $B_{fully}(\theta' - \theta, \phi' - \phi)$ between a particular $ (\theta', \phi')$ and varying $(\theta, \phi)$. Thus, each pixel value $ F^{conv}(\theta, \phi)$ of the function $ F^{conv}$ is a weighted mean of the pixel values $f_{sky}(\theta, \phi)$ with weights $B_{fully}(\theta' - \theta, \phi' - \phi)$ defined by the function $B_{fully}$.\\
+%%
+
+\noindent
+If we take the modeled beams $(B_{fully})$ in Fig.~\ref{fig:truosk1} to convolve the full-sky polarisation maps $(f_{sky})$ in Fig.~\ref{fig:fg8}, we obtain the convolved maps  $(F^{conv})$ in Fig.~\ref{fig:fg9}. We repeat the same approach using the distorted beams in appendices~\ref{fig:A1a} and~\ref{fig:A1b} and also, the holography measured beams in appendices~\ref{fig:A2a} and~\ref{fig:A2b} to produce their respective convolved maps. The original spatial distributions of the foregrounds in Fig.~\ref{fig:fg8} are clearly maintained in the diagonals of the convolved maps as showed in Fig.~\ref{fig:fg9}. This happens when we simulate the full-sky maps with the gain terms in the diagonals of our beams.\\
+%%
+
+\noindent
+In IM experiments, what we are actually interested in, is to measure the total intensity of a signal. Therefore, in section~\ref{sec:spectrum}, we present a mathematical model of the convolved power spectrum using the angular power spectrum to describe the spatial distribution of the measured foregrounds in spherical harmonic domain.
+%%
+
+
+\subsection{Angular Power Spectrum}    \label{sec:spectrum}
+%%  
+In CMB studies \citep{2006NewAR..50..854S,2015arXiv151100532K,1998PhRvD..57.5273W,2015aska.confE..35W,2006ApJ...645L..89S,2016MNRAS.457.1796A},it is common practice to characterize the distribution of flux in a sphere with the angular power spectrum. We employed the same approach in this paper to describe the diffuse foreground intensity over spherical harmonics $Y_{l,m}$. Consider the foreground of the sky is emitted by extra-galactic radio sources such that these radio sources are randomly distributed on the entire sky. We can therefore measure the total source emission temperature $T(\hat{\sigma})$, in each sky pixel and represent the distribution as an expansion in 2D spherical harmonics:
+%%
+
+ %% EQ8
+ \begin{equation}  	\label{eq:q14} 
+                    T(\hat{\sigma}) = \mathop{\sum_{l\, = 0}^{\infty}\sum_{m\, = -l}^{l}} \, a_{lm}Y_{lm}(\hat{\sigma})
+     \end{equation}
+ %%
+
+\noindent
+where, $\hat{\sigma} \equiv (\psi, \xi)$ is the unit vector in some direction in the sky and $Y_{lm}(\hat{\sigma})$ are the spherical harmonic functions evaluated in the direction $\hat{\sigma}$ such that, they form a complete orthonormal set on the unit sphere and can be expressed as;
+%%
+
+\begin{equation} 	\label{eq:q15}
+            Y_{lm}(\psi ,\xi) = (-1)^m \, \sqrt{\frac{2l + 1}{4\pi} \, \frac{(l - m)!}{(l + m)!}}\, P_{l}^{m}(\cos \psi)e^{im\xi} 
+		      \end{equation}
+%%
+
+\noindent
+In equation~\eqref{eq:q15}, the indices $l = 0, \dots, \infty$ and $-l < m < l$ with $P_{l}^{m}$ denoting the Legendre polynomials. $l$ is known as the multipole which denotes a given angular scale $\gamma$ in the sky, where $\gamma \simeq 180^{\circ}/l$.
+%%
+
+%%
+\noindent
+The coefficients $ a_{lm}$ in equation~\eqref{eq:q14},
+ %% EQ44
+ \begin{equation} 	  \label{eq:q16}
+         a_{lm} = \int_{\psi = - \pi/2}^{\pi/2} \,\int_{\xi = 0}^{2\pi} \, T_{lm}(\hat{\sigma})Y_{lm}^{*}(\hat{\sigma})\mathnormal{{d\xi}{d\psi}}                            
+		      \end{equation}
+%
+\noindent
+is related to what we normally do in the Fourier space.\\
+%%
+%%% +++ CONV. MAP WITH TRUE NOTIONAL BEAM ++++++
+%
+ \begin{figure*}
+\begin{minipage}[H]{\linewidth}
+      %\centering
+      %\hspace*{-0.9cm}
+      %\raggedright
+      \includegraphics[width=6.8in]{sec3gp_conv/gp4_Tchan_4}      
+      \end{minipage} 
+    \caption{\textit{Convolved full-sky polarisation maps using the non-distorted OSKAR beams. For example, we used the $m_{II}$ beam in Fig.~\ref{fig:truosk1} to convolve Stokes $I$ in Fig.~\ref{fig:fg8} and produce the convolved map $I \rightarrow I$ , then we used $m_{QI}$ beam to convolve Stokes $Q$ to obtain the convolved map $Q \rightarrow I$, also, using the $m_{UI}$ beam to convolve Stokes $U$ we produced the convolved map $U \rightarrow I$. The other convolved maps are produced in the same manner using their respective beams.}}\label{fig:fg9}
+\end{figure*}
+%%
+
+%%% +++ RESIDUAL ++++++
+%%
+ \begin{figure*}
+\begin{minipage}[H]{\linewidth}
+      \centering
+     % \hspace*{-1.0cm}
+      %\raggedright
+      \includegraphics[width=6.8in]{sec3gp_conv/gp_Echan_2}       
+      \end{minipage} 
+    \caption{\textit{Systematic errors of full-sky maps produced by computing the difference between the absolute true sky maps and the corrupted sky maps due to gain and phase error beams.}} \label{fig:fg11}
+\end{figure*}
+%%
+
+\noindent
+Consider any two galaxies, then the correlation function of the temperatures is expressed as;
+ % EQ11
+  \begin{equation}		\label{eq:q17}   
+   C_{cr}(\Theta) = \langle T(\hat{\sigma_i})T(\hat{\sigma_j})\rangle \, , \quad \Theta = \sigma_{i}.\sigma_{j}   
+  \end{equation}\\
+%
+
+\noindent
+where, the brackets $\langle \, \rangle$, denote averaging over $2l+1$ values of $m$.\\
+%
+
+\noindent
+Equation~\eqref{eq:q17} strictly relies on the separation angle between two sources as discussed in \cite[p. 78]{1997Schramm} and therefore, can be rewritten in terms of Legendre polynomials:
+%
+% EQ12
+\begin{equation}  	 \label{eq:q18}
+   C_{cr}(\Theta) = \mathop{\sum_{l\, = 0}}\, \frac{2l + 1}{4\pi}\,C_{l}P_{l}(\cos \Theta)  
+  \end{equation}
+  %%
+  
+\noindent
+ From equation~\eqref{eq:q18}, we can estimate the statistical distribution of the angular power spectrum $\hat{C_l}$ of the entire sky in terms of $a_{lm}$:
+ %
+ % EQ13
+ \begin{equation}  	\label{eq:q19}
+  \hat{C_l} = \frac{1}{2l + 1}\, \mathop{\sum_{m}}\, |\hat{a_{lm}}|^{2} \, , \quad -l < m < l 	
+\end{equation}
+% 
+
+\noindent
+In this paper, we used \emph{anafast} in HEALPix library to compute the auto-power spectrum $\hat{C}_{l}$ of foregrounds of the sky in section~\ref{sec:convolution} by executing an approximate, discrete point-set quadrature on a sphere sampled at the HEALPix pixel centers. Spherical harmonic transforms are then computed using recurrence relations for Legendre polynomials on co-latitude $\psi$ and Fast Fourier Transforms on longitude $\xi$. 
+%%
+
+\section{Results and Analysis}    \label{sec:results}
+ %%
+Summing across the rows of the convolved maps for using the true and distorted (due to gain and phase errors) fully polarised OSKAR beams, we produced the measured foreground maps reported in Fig.~\ref{fig:fgGP} in terms of Stokes $I$, $Q$ and $U$ accordingly. We then computed the differences between these two measured maps and obtained the maximum errors of $\approx 1.75e^{-05} \, Jy/beam$ in $I$, $\approx 2.64e^{-05} \, Jy/beam$ in $Q$ and $\approx 6.11e^{-05} \, Jy/beam$ in $U$.  The increase in error of linear polarisation clearly shows the dominance of Stokes $I$ in the measured maps of Stokes $Q$ and $U$. However, we can correct this effect by subtracting Stokes $I$ term to regain the original polarisation maps of Q and U. Similar approach was employed to obtain the measured maps in appendices~\ref{fig:B1} and~\ref{fig:B2}. The latter is when we convolved the foregrounds with the holography measured beams of VLA and the former is when we used the dipole orientation error beams.
+%%
+
+The power spectra presented in Figs.~\ref{fig:fg15} to~\ref{fig:fg17} allow an estimate for the density of the foregrounds in Fig.~\ref{fig:fg8} at different multipole moments. The beam power in each plot of both OSKAR and holography measured beams is normalised to $1$. It is computed by finding the quotient of the power spectrum of the convolved sky map and the original sky map. The OSKAR beam power plots in Stokes $I$, $Q$ and $U$, converge at a multipole moment of $60$. This value relates to an angular scale of $3.0^\circ$ on the sky. Also, the beam power spectra of the holography measured beams converge, just after a multipole moment of $100$, giving an angular scale of $1.8^\circ \, \backsimeq \, 2.0^\circ$ on the sky. These angular scales are equivalent to the beam sizes we used to convolve the original maps in Fig.~\ref{fig:fg8}. The beam effect for these two beams is clearly observed in the convolved power spectra of Stokes $I$, $Q$ and $U$. The convolved power spectra of Stokes I, Q and U are $10^{-10} \, Jy/beam $, $10^{-11} \, Jy/beam $  and $10^{-11} \, Jy/beam $ respectively. These values actually predicted the intensity of the foregrounds of the true sky.
+
+
+Also, in Fig.~\ref{fig:fg18}, we showed the power spectra of the various residual leakages when we calculated the differences between the absolute of the distorted and non-distorted convolved full-sky maps as reported in Fig.~\ref{fig:fg11} for using both OSKAR and holography measured beams. To estimate in percentage terms, the amount of  foregrounds that had leaked from intensity to polarisation and vice-versa, we computed the standard error (SE) for each residual spectrum. This SE term measured the expected value of the standard deviations of the sampling distributions of the residual maps as presented in Fig.~\ref{fig:fg11}. The amount of signal that had leaked from Stokes $I$ into $Q$ ($ L_{se}^{I \longrightarrow Q}$) is $\approx 0.7154 \%$ (due to gain and phase errors in OSKAR beams), $0.7402 \%$ (due to dipole orientation errors in OSKAR beams) and $ 0.7393 \%$ (due to errors in holography beams). For Stokes $I$ into $U$ ($ L_{se}^{I \longrightarrow U}$) is $\approx 0.7409 \%$ , $0.7587 \%$  and $ 0.7339 \%$ accordingly.  Hence, the overall leakage in Fig.~\ref{fig:fg18} is $\approx 1 \%$.
+
+Table~\ref{tbl:excel-table} in appendix~\ref{sec:B} displayed the errors made in the angular power spectrum estimation when we considered OSKAR beam model to holography measured beams. These errors made were derived from the absolute differences of the standard errors in Fig.~\ref{fig:fg11} between the leakage terms due to errors introduced in the OSKAR beams and errors in the holography measured beams. For instance, the errors made in the power spectrum for $I \rightarrow Q$ were estimated at $\approx 0.0240 \%$ (for gain and phase error) and $ 0.0009 \%$ (for dipole orientation error). Accordingly, for $I \rightarrow U$, the errors produced were $\approx 0.00070 \%$ and $ 0.0248 \%$. In general, the estimated errors we introduced in the power spectrum for Stokes $I$ were estimated at $\approx 0.0280 \%$ (for gain and phase error) and $ 0.0488 \%$ (for dipole orientation error), for $Q$ we had $\approx 0.02887 \%$ and $0.1628 \%$ and for $U$ we had  $\approx 0.0258 \%$ and $0.0642 \%$ in the respective manner. These estimated values obviously shows that OSKAR is a good simulator for beampattern simulations, especially for large aperture arrays like those envisaged for SKA.
+
+%	++++++++++++++++++++++++++++++++++++++++++++
+%	Conv maps with GP  Beams
+
+\begin{figure*}
+\begin{minipage}[H]{\linewidth}
+      \centering      
+      \includegraphics[width=6.8in]{sec3gp_conv/gp_All_chan_4}
+    \end{minipage}
+     \caption{\textit{The top and middle maps depict the measured foregrounds of Stokes I, Q and U  for using the non-distorted and the gain and phase error full polarisation beams respectively. The bottom maps are the corresponding errors in $I$, $Q$ and $U$.}}
+	    \label{fig:fgGP}    
+    \end{figure*}
+    %%    
+  
+  
+  %% I
+ \begin{figure*}
+ \begin{minipage}[H]{\linewidth}
+  \centering
+     \begin{subfigure}[b]{0.325\textwidth}
+                \includegraphics[width=\textwidth]{powspectrum/giipwchan_4}               
+                \caption{}
+                \label{fig:fg15a}
+        \end{subfigure}       
+        \begin{subfigure}[b]{0.325\textwidth}
+                \includegraphics[width=\textwidth]{powspectrum/xiipwchan_4}                
+                \caption{}
+               \label{fig:fg15b}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.325\textwidth}
+                \includegraphics[width=\textwidth]{powspectrum/hiipwchan_4}                
+                \caption{}
+               \label{fig:fg15c}
+        \end{subfigure}
+         \end{minipage}
+         \caption{\textit{Power spectrum estimation of Stokes I.} (a) \textit{Convolved with true and gain and phase error beams.} (b) \textit{ Convolved with true and orientation error beams.} (c) \textit{ Convolved with holography measured beams.}
+       }  \label{fig:fg15}
+  \end{figure*}  
+    
+   
+   
+    %% Q
+ \begin{figure*}
+ \begin{minipage}[H]{\linewidth}
+  \centering
+     \begin{subfigure}[b]{0.325\textwidth}
+                \includegraphics[width=\textwidth]{powspectrum/gqqpwchan_4}               
+                \caption{}
+                \label{fig:fg16a}
+        \end{subfigure}       
+        \begin{subfigure}[b]{0.325\textwidth}
+                \includegraphics[width=\textwidth]{powspectrum/xqqpwchan_4}                
+                \caption{}
+               \label{fig:fg16b}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.325\textwidth}
+                \includegraphics[width=\textwidth]{powspectrum/hqqpwchan_4}                
+                \caption{}
+               \label{fig:fg16c}
+        \end{subfigure}
+         \end{minipage}
+         \caption{\textit{Power spectrum estimation of Stokes Q.} (a) \textit{Convolved with true and gain and phase error beams.}
+      (b) \textit{ Convolved with true and orientation error beams.}  (c) \textit{ Convolved with holography measured beams.}
+       }\label{fig:fg16}
+  \end{figure*}
+%%
+
+  %% U
+ \begin{figure*}
+ \begin{minipage}[H]{\linewidth}
+  \centering
+     \begin{subfigure}[b]{0.325\textwidth}
+                \includegraphics[width=\textwidth]{powspectrum/guupwchan_4}               
+                \caption{}
+                \label{fig:fg17a}
+        \end{subfigure}       
+        \begin{subfigure}[b]{0.325\textwidth}
+                \includegraphics[width=\textwidth]{powspectrum/xuupwchan_4}                
+                \caption{}
+               \label{fig:fg17b}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.325\textwidth}
+                \includegraphics[width=\textwidth]{powspectrum/huupwchan_4}                
+                \caption{}
+               \label{fig:fg17c}
+        \end{subfigure}
+         \end{minipage}
+         \caption{\textit{Power spectrum estimation of Stokes U.} (a) \textit{Convolved with true and gain and phase error beams.}
+      (b) \textit{ Convolved with true and orientation error beams.} (c) \textit{ Convolved with holography measured beams.}
+       } \label{fig:fg17}
+  \end{figure*}
+  
+  %
+
+   \begin{figure*}
+   \begin{minipage}[H]{\linewidth}
+  \centering    
+    \includegraphics[width=6.8in]{powspectrum/leakag_fig_7}
+ \end{minipage} 
+ \caption{\textit{Power spectra for the systematic leakage terms of the error maps as shown in Fig.~\ref{fig:fg11}. The notations $SE^{GP}$ and $SE^{XY}$ 
+ in the legends denote the standard errors for the residual leakages with respect to gain-phase and dipole orientation errors in the OSKAR beams. 
+ Also, $SE^{HB}$ depicts the standard error for the residual leakages due to errors in the holography beams}} \label{fig:fg18}.
+ \end{figure*} 
+
+ %%
+ 
+\section{Conclusions} \label{sec:conclusions}
+%%
+This paper introduced a cheaper technique to produce realistic beampatterns of KAT-7. The technique basically  modelled each antenna station as a collection of dipoles and used these telescope models to simulate the beam responses. The modelled beams were then distorted with gain and phase and dipole orientation errors. The foregrounds of the sky were then simulated with these modelled beams for both cases (i.e. distorted and non-distorted) by employing convolution technique to measure the intensity that came from different patches of the sky. We then applied the angular power spectrum approach to describe the diffuse foreground intensity over spherical harmonics and statistically estimated the amount of measured foregrounds that had leaked from intensity into polarisation. Also, we introduced the holography measured beams of VLA in our simulation to determine the amount of errors we made in the power spectrum estimation when we assumed modelled beam, whilst the full-sky maps were actually convolved with  ``real'' beams.
+%%
+
+The key findings in this work were as follows:
+%
+\begin{itemize}%[leftmargin=*]
+\item When corrupting the OSKAR beams, the gain and phase errors must be within the range of $[1,5]$ degrees and $[5, 10]$ percent respectively. Also, the dipole orientation errors should be within the range of $[1, 2]$ degrees. Anything outside these ranges could lead to highly distorted modelled beams, especially the beam gain terms, hence, loosing its realistic deformation.
+
+\item In using the modelled beams to convolve the full-sky maps, the signal had leaked from Stokes $I$ into $Q$ was estimated at $\approx 0.7154 \%$ as a result of gain-phase error and $ 0.7402 \%$ for introducing dipole orientation errors.From Stokes $I$ into $U$, it was estimated at $\approx 0.7409 \%$ as a result of gain-phase error and $0.7587 \%$ for introducing dipole orientation errors. 
+
+\item Similarly, using the holography measured beams of VLA to convolve the full-sky maps, the signal that leaked from Stokes $I$ into $Q$ and $U$ were  estimated at $\approx 0.7393 \%$ and $0.7339 \%$ respectively. Hence, the maximum leakage value for all respective cases was estimated at $\approx 1.0 \%$.
+
+\item Furthermore, the maximum errors introduced in the power spectrum estimation for considering  OSKAR beams whilst the foregrounds are con holography beams for Stokes $I$, $Q$ and $U$ were accordingly estimated at $ 0.0488 \%$,  $0.1628 \%$ and $0.0642 \%$.
+\end{itemize}
+
+In summary, IM experiment is potentially a very powerful observational tool to study the large-scale structure of the Universe at recent times and therefore, with our fully polarised modelled beams produced from OSKAR and the convolution technique for foregrounds simulations, we can therefore, estimate the amount of foregrounds that had leaked from intensity into polarisation. Our future work is to implement similar approach to investigate KAT-7 HI intensity mapping observation.
+%
+%
+
+\section*{Acknowledgments}
+This research is fully supported by the South African SKA Project (SKA-SA). We also acknowledge the use of the HEALPix software (http://healpix.sourceforge.net) and the OSKAR beam pattern simulation (http://www.oerc.ox.ac.uk/~ska/oskar2/) for generating the notional beams.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%% REFERENCES %%%%%%%%%%%%%%%%%%
+
+% The best way to enter references is to use BibTeX:
+
+%\bibliographystyle{mnras}
+%\bibliography{example} % if your bibtex file is called example.bib
+\nocite{*}
+\bibliographystyle{mnras} %mn2e}
+\bibliography{references}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% %%%%%%%%%%%%%%%%% APPENDICES %%%%%%%%%%%%%%%%%%%%%
+%\onecolumn
+\newpage
+\appendix
+\section{Distorted OSKAR beams and Holography measured beams} \label{sec:A}
+%% 
+ \begin{figure*}
+ \begin{minipage}[!b]{\linewidth}
+  \centering
+     \begin{subfigure}[b]{0.495\textwidth}
+                \includegraphics[width=\textwidth]{sec2oskbms/osk_gpmueller}
+                \caption{}
+                \label{fig:A1a}
+        \end{subfigure}       
+        \begin{subfigure}[b]{0.485\textwidth}
+                \includegraphics[width=\textwidth]{sec2oskbms/osk_xymueller}
+                \caption{}
+               \label{fig:A1b}
+        \end{subfigure}
+         \end{minipage}
+        \caption{\textit{Fully polarised distorted primary beams of KAT-7.} (a) \textit{Due to gain and phase errors.}  (b) \textit{Due to dipole orientation errors.}
+      }
+	    \label{fig:A1}
+  \end{figure*}
+  %
+%%
+\begin{figure*}
+  \centering
+  \begin{minipage}[H]{\linewidth}
+     \begin{subfigure}[b]{0.495\textwidth}
+                \includegraphics[width=\textwidth]{sec2realbms/vla5mueller}
+                \caption{}
+                \label{fig:A2a}
+        \end{subfigure}       
+        \begin{subfigure}[b]{0.485\textwidth}
+                \includegraphics[width=\textwidth]{sec2realbms/vla6mueller}
+                \caption{}
+               \label{fig:A2b}
+        \end{subfigure}         
+         \end{minipage}
+        \caption{\textit{$1$ GHz holography measured Mueller beams of VLA.} (a) \textit{Antenna $5$.}
+      (b) \textit{Antenna 6.}
+      }
+	    \label{fig:A2}
+  \end{figure*}
+%%
+
+
+\section{Measured Full-sky maps} \label{sec:B}
+%%
+  %	++++++++++++++++++++++++++++++++++++++++++++
+%	Conv maps with XY  Beams
+%
+
+\begin{figure*}
+\begin{minipage}[H]{\linewidth}
+      \centering      
+      \includegraphics[width=6.8in]{sec3gp_conv/xy_All_chan_2}
+    \end{minipage}
+     \caption{\textit{Measured Stokes I, Q and U  for using non-distorted and distorted dipole orientation error OSKAR beams with corresponding errors terms.}}
+	    \label{fig:B1}    
+    \end{figure*}
+%%
+
+
+%	++++++++++++++++++++++++++++++++++++++++++++
+%	Conv maps with VLA  Beams
+%
+
+\begin{figure*}
+\begin{minipage}[H]{\linewidth}
+      \centering      
+      \includegraphics[width=6.8in]{sec3gp_conv/v_All_chan_2}
+    \end{minipage}
+     \caption{\textit{Measured Stokes I, Q and U  for holography measured beams of VLA with corresponding errors terms.}}
+	    \label{fig:B2}    
+    \end{figure*}
+    %%
+ 
+ \newpage
+\begin{table*}\centering
+\caption{Error introduced in the power spectrum estimation}
+\label{tbl:excel-table}
+\ra{1.3}
+\begin{tabular}{@{}rrrcrrcrrcrr@{}}\toprule 
+& \multicolumn{2}{c}{$\bm{I}$} & \phantom{abc}& \multicolumn{2}{c}{$\bm{Q}$} & \phantom{abc} & \multicolumn{2}{c}{$\bm{U}$} & \phantom{abc} & \multicolumn{2}{c}{$\bm{TOTAL}$}\\
+\cmidrule{2-3}  \cmidrule{5-6} \cmidrule{8-9} \cmidrule{11-12}
+& $GP \, [\%]$ & $XY \, [\%]$ && $GP \, [\%] $ & $XY \, [\%] $  && $GP \, [\%]$ & $XY \, [\%]$  && $GP \, [\%]$ & $XY \, [\%]$ \\ \midrule
+{}\\
+$\bm{I}$ & 0.0145 & 0.0104 && 0.0001 & 0.0002  && 0.0067 & 0.0092 && \textbf{0.0280} & \textbf{0.0488}\\
+$\bm{Q}$ & 0.0240 & 0.0009 && 0.1159 & 0.0133 && 0.1421 & 0.1394 && \textbf{0.2887} & \textbf{0.1628}\\
+$\bm{U}$ & 0.0070 & 0.0248 && 0.0002 & 0.0002 && 0.0119 & 0.0300  && \textbf{0.0258} & \textbf{0.0642}\\
+\bottomrule
+\end{tabular}
+%\caption{Caption}
+\end{table*}
+
+%%
+% Don't change these lines
+%\bsp	% typesetting comment
+\label{lastpage}
+\end{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%% REFERENCES %%%%%%%%%%%%%%%%%%
+
+% The best way to enter references is to use BibTeX:
+
+%\bibliographystyle{mnras}
+%\bibliography{example} % if your bibtex file is called example.bib
+
+
+% % Alternatively you could enter them by hand, like this:
+% % This method is tedious and prone to error if you have lots of references
+% \begin{thebibliography}{99}
+% \bibitem[\protect\citeauthoryear{Author}{2012}]{Author2012}
+% Author A.~N., 2013, Journal of Improbable Astronomy, 1, 1
+% \bibitem[\protect\citeauthoryear{Others}{2013}]{Others2013}
+% Others S., 2012, Journal of Interesting Stuff, 17, 198
+% \end{thebibliography}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% %%%%%%%%%%%%%%%%% APPENDICES %%%%%%%%%%%%%%%%%%%%%
+
+% \appendix
+
+% \section{Some extra material}
+
+% If you want to present additional material which would interrupt the flow of the main paper,
+% it can be placed in an Appendix which appears after the list of references.
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% % Don't change these lines
+% \bsp	% typesetting comment
+% \label{lastpage}
+% \end{document}
+
+% End of mnras_template.tex

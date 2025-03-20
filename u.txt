@@ -1,0 +1,8 @@
+git init
+git status
+git add *
+git commit -am 'calibrated data added'
+git push origin main
+<<<<<when the need to add new token >>>
+git config --global credential.helper store
+git push origin main
