@@ -1,0 +1,46 @@
+% suppress-deleted_w.sty
+\RequirePackage{xcolor}
+\RequirePackage{soul}
+\RequirePackage{ulem}
+
+% ---- Color setup ----
+\providecommand{\DIFaddcolor}{magenta}   % change this to any color
+\definecolor{mathbg}{rgb}{0.9,0.9,1}
+
+% ---- Soul registration (keep as is) ----
+\soulregister{\cite}{1}
+\soulregister{\ref}{1}
+\soulregister{\pageref}{1}
+\soulregister{\texttt}{1}
+\soulregister{\textrm}{1}
+\soulregister{\textsf}{1}
+\soulregister{\textsc}{1}
+\soulregister{\emph}{1}
+\soulregister{\textbf}{1}
+\soulregister{\textit}{1}
+\soulregister{\underline}{1}
+\soulregister{\url}{1}
+
+% ---- Added text (no underline, just color) ----
+\providecommand{\DIFadd}[1]{{\color{\DIFaddcolor}#1}}
+\providecommand{\DIFaddtex}[1]{\textcolor{\DIFaddcolor}{\colorbox{mathbg}{$#1$}}} % math with bg
+
+% ---- Deleted text (hidden) ----
+\providecommand{\DIFdel}[1]{}
+\providecommand{\DIFdelbegin}{}
+\providecommand{\DIFdelend}{}
+\providecommand{\DIFaddbegin}{}
+\providecommand{\DIFaddend}{}
+
+% ---- Float versions ----
+\providecommand{\DIFaddFL}[1]{{\color{\DIFaddcolor}#1}}
+\providecommand{\DIFdelFL}[1]{}
+\providecommand{\DIFaddbeginFL}{}
+\providecommand{\DIFaddendFL}{}
+\providecommand{\DIFdelbeginFL}{}
+\providecommand{\DIFdelendFL}{}
+\providecommand{\DIFaddtexFL}[1]{\textcolor{\DIFaddcolor}{\colorbox{mathbg}{$#1$}}}
+
+% ---- Fallback ----
+\providecommand{\DIFaddalt}[1]{{\color{magenta}#1}}
+\providecommand{\DIFaddFLalt}[1]{{\color{magenta}#1}}
